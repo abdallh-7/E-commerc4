@@ -1,0 +1,20 @@
+@import "tailwindcss";
+@font-face {
+  font-family: 'MyFont';
+  src: url('../fonts/src/fonts/static/RedHatText-Bold.ttf') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+.scroll-element {
+  opacity: 0;
+  transform: translateY(50px); 
+  transition: all 0.8s ease-out;
+}
+
+.scroll-element.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+

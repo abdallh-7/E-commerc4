@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>E-commerce</title>
+  <link rel="stylesheet" href="css/input.css" />
+  <link rel="stylesheet" href="css/output.css" />
+  <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- Navbar -->
+  <nav id="navbar"
+    class="fixed top-0 left-0 w-full z-50 bg-white/30 border-b border-white/20 transition-all duration-300">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="flex justify-between items-center h-16">
+        <div  class="flex space-x-3 items-center cursor-pointer" id="logo">
+          <img src="images/favicon.png" alt="Logo" class="h-8 w-8">
+          <div class="font-bold text-2xl">ecomme</div>
+        </div>
+
+        <div id="mobile-menu"  class=" hidden md:flex items-center space-x-10">
+          <a href="#product" class="text-gray-700 hover:text-gray-900 font-medium">Products</a>
+          <a href="#FAQ" class="text-gray-700 hover:text-gray-900 font-medium">FAQ's</a>
+          <a href="#Contacts" class="text-gray-700 hover:text-gray-900 font-medium">Contact</a>
+        </div>
+
+        <div id="cart-icon" class="flex items-center space-x-2 relative">
+          <img src="images/icon-cart.svg" alt="Cart"
+            class="h-6 w-6 cursor-pointer hover:scale-110 transition-transform">
+          <span id="cart-count"
+            class="absolute -top-2 -right-2 bg-yellow-500 text-white text-xs font-bold px-1.5 rounded-full">0</span>
+        </div>
+
+        <div class="md:hidden flex items-center">
+          <button id="menu-btn" class="cursor-pointer focus:outline-none">
+            <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="max-w-6xl mx-auto px-4 pt-24 space-y-20">
+    <!-- Slider -->
+    <section>
+      <div id="slider"
+        class="w-full scroll-element bg-cover bg-center   duration-700 transition-opacity ease-in-out h-[250px] md:h-[400px] relative flex items-center justify-center shadow-lg"
+        style="background-image: url('images/slider-1.jpeg');border-radius: 30px;">
+        <p class="absolute top-10 left-10 text-3xl font-bold text-purple-800 drop-shadow-lg">
+          Sale of the year!
+        </p>
+
+        <div id="prev-btn"
+          class="absolute left-4 top-1/2 transform -translate-y-1/2 cursor-pointer p-3 hover:bg-yellow-300 transition-all rounded">
+          <img src="images/icon-previous.svg" alt="">
+        </div>
+        <div id="next-btn"
+          class="absolute right-4 top-1/2 transform -translate-y-1/2 cursor-pointer p-3 hover:bg-yellow-300 transition-all rounded">
+          <img src="images/icon-next.svg" alt="">
+        </div>
+      </div>
+    </section>
+
+    <!-- Specials -->
+    <section class="flex flex-col md:flex-row items-center gap-8 scroll-element">
+      <div>
+        <button
+          class="p-3 bg-yellow-400 mb-3 rounded font-medium cursor-pointer hover:bg-yellow-500 transition-all ">Special
+          for you</button>
+        <p class="text-2xl font-bold leading-snug">
+          Here is the new collection to make you <br> look beautiful!
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 grid-cols-1 gap-4">
+        <div class="flex flex-col gap-4">
+          <div class="relative rounded-xl overflow-hidden shadow-md group h-48">
+            <img src="images/sunglasses-cover.jpg" alt="Sunglasses"
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+            <div class="absolute inset-0 flex items-center justify-center">
+              <span
+                class="bg-white text-gray-800 font-semibold px-3 py-1.5 cursor-pointer hover:bg-yellow-400 transition-all rounded-md shadow">
+                Discover Sunglasses
+              </span>
+            </div>
+          </div>
+
+          <div class="relative rounded-xl overflow-hidden shadow-md group h-48">
+            <img src="images/trousers-cover.jpg" alt="Trousers"
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+            <div class="absolute inset-0 flex items-center justify-center">
+              <span
+                class="bg-white text-gray-800 font-semibold px-3 py-1.5 rounded-md shadow cursor-pointer hover:bg-yellow-400 transition-all">
+                Discover Trousers
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="relative rounded-xl overflow-hidden shadow-md group md:row-span-2 h-[25rem]">
+          <img src="images/necklace-cover.jpg" alt="Necklaces"
+            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+          <div class="absolute inset-0 flex items-center justify-center">
+            <span
+              class="bg-white text-gray-800 font-semibold px-4 py-1.5 rounded-md shadow cursor-pointer hover:bg-yellow-400 transition-all">
+              All Necklaces
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Offer Section -->
+    <section>
+      <div
+        class="bg-gradient-to-r from-purple-400 to-indigo-500 rounded-2xl text-white flex flex-col md:flex-row justify-between items-center p-6 md:p-10 shadow-lg scroll-element">
+        <div class="text-center md:text-left mb-4 md:mb-0">
+          <h2 class="text-2xl md:text-3xl font-bold">Get <span class="font-extrabold">50% Off</span> Before It's too
+            Late!</h2>
+          <p class="italic mt-2 text-sm" id="offer-end"></p>
+        </div>
+
+        <div id="countdown" class="flex space-x-3">
+          <div class="bg-white text-black rounded-md px-4 py-2 text-center">
+            <div class="font-bold font-mono text-lg" id="days">00</div>
+            <div class="text-xs">days</div>
+          </div>
+          <div class="bg-white text-black rounded-md px-4 py-2 text-center">
+            <div class="font-bold text-lg font-mono" id="hours">00</div>
+            <div class="text-xs">hours</div>
+          </div>
+          <div class="bg-white text-black rounded-md px-4 py-2 text-center">
+            <div class="font-bold text-lg font-mono" id="minutes">00</div>
+            <div class="text-xs">mins</div>
+          </div>
+          <div class="bg-white text-black rounded-md px-4 py-2 text-center">
+            <div class="font-bold text-lg font-mono" id="seconds">00</div>
+            <div class="text-xs">secs</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Products -->
+    <section class="text-center scroll-element">
+
+      <div class="relative">
+        <h1 id="product" class="font-bold text-4xl mb-6 font-serif">Products</h1>
+        <div class="w-40 h-1 bg-yellow-500 absolute left-1/2 -translate-x-1/2 top-[100%]"></div>
+
+      </div>
+
+      <ul class="flex justify-center space-x-6 text-gray-700 font-medium mb-10">
+        <li class="filter-btn cursor-pointer hover:text-purple-600" data-filter="all">All</li>
+        <li class="filter-btn  cursor-pointer hover:text-purple-600" data-filter="Sunglasses">Sunglasses</li>
+        <li class="filter-btn  cursor-pointer hover:text-purple-600" data-filter="Trousers">Trousers</li>
+        <li class="filter-btn  cursor-pointer hover:text-purple-600" data-filter="Necklace">Necklace</li>
+      </ul>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 grid-flow-row-dense">
+
+        <a href="#"class="group bg-white rounded-xl p-4 shadow hover:shadow-lg transition text-left product-card Necklace">
+          <img src="images/necklace-1.jpg" alt="" class="rounded-lg object-cover w-full h-56 group-hover:opacity-90" />
+          <h3 class="mt-4 text-lg font-bold">Earthen Bottle</h3>
+          <p>Modern way of prettiness</p>
+          <p class="mt-1 text-lg font-medium text-gray-900 mb-2 ">$1,399</p>
+          <button
+            class=" add-cart-btn px-6 py-2 flex justify-center items-center gap-2 rounded bg-yellow-500 hover:bg-yellow-600 text-white font-bold cursor-pointer  group-hover:-translate-y-2 transition-transform">
+            <img src="images/icon-cart.svg" alt="">Add cart
+          </button>
+        </a>
+
+
+        <a href="#"
+          class="group bg-white rounded-xl p-4 shadow hover:shadow-lg transition text-left product-card Necklace">
+          <img src="images/necklace-2.jpg" alt="" class="rounded-lg object-cover w-full h-56 group-hover:opacity-90" />
+          <h3 class="mt-4 text-lg font-bold">Earthen Bottle</h3>
+          <p>Modern way of prettiness</p>
+          <p class="mt-1 text-lg font-medium text-gray-900 mb-2">$$1,60</p>
+          <button
+            class="add-cart-btn  px-6 py-2 flex justify-center items-center gap-2 rounded bg-yellow-500 hover:bg-yellow-600 cursor-pointer text-white font-bold transition group-hover:-translate-y-2 transition-transform">
+            <img src="images/icon-cart.svg" alt="">Add cart
+          </button>
+        </a>
+
+
+        <a href="#"
+          class="group bg-white rounded-xl p-4 shadow hover:shadow-lg transition text-left product-card Necklace">
+          <img src="images/necklace-3.jpg" alt="" class="rounded-lg object-cover w-full h-56 group-hover:opacity-90" />
+          <h3 class="mt-4 text-lg font-bold">Earthen Bottle</h3>
+          <p>Modern way of prettiness</p>
+          <p class="mt-1 text-lg font-medium text-gray-900 mb-2">$150</p>
+          <button
+            class="add-cart-btn  px-6 py-2 flex justify-center items-center gap-2 rounded bg-yellow-500 hover:bg-yellow-600 cursor-pointer text-white font-bold transition group-hover:-translate-y-2 transition-transform">
+            <img src="images/icon-cart.svg" alt="">Add cart
+          </button>
+        </a>
+
+
+        <a href="#"
+          class="group bg-white rounded-xl p-4 shadow hover:shadow-lg transition text-left product-card Necklace">
+          <img src="images/necklace-4.jpg" alt="" class="rounded-lg object-cover w-full h-56 group-hover:opacity-90" />
+          <h3 class="mt-4 text-lg font-bold">Earthen Bottle</h3>
+          <p>Modern way of prettiness</p>
+          <p class="mt-1 text-lg font-medium text-gray-900 mb-2">$90</p>
+          <button
+            class="add-cart-btn px-6 py-2 flex justify-center items-center gap-2 rounded bg-yellow-500 hover:bg-yellow-600 cursor-pointer text-white font-bold transition group-hover:-translate-y-2 transition-transform">
+            <img src="images/icon-cart.svg" alt="">Add cart
+          </button>
+        </a>
+
+        <a href="#"
+          class="group bg-white rounded-xl p-4 shadow hover:shadow-lg transition text-left product-card Sunglasses">
+          <img src="images/sg-1.jpg" alt="" class="rounded-lg object-cover w-full h-56 group-hover:opacity-90" />
+          <h3 class="mt-4 text-lg font-bold">Earthen Bottle</h3>
+          <p>Modern way of prettiness</p>
+          <p class="mt-1 text-lg font-medium text-gray-900 mb-2">$22</p>
+          <button
+            class="add-cart-btn  px-6 py-2 flex justify-center items-center gap-2 rounded bg-yellow-500 hover:bg-yellow-600 cursor-pointer text-white font-bold transition group-hover:-translate-y-2 transition-transform">
+            <img src="images/icon-cart.svg" alt="">Add cart
+          </button>
+        </a>
+
+
+        <a href="#"
+          class="group bg-white rounded-xl p-4 shadow hover:shadow-lg transition text-left product-card Sunglasses">
+          <img src="images/sg-2.jpg" alt="" class="rounded-lg object-cover w-full h-56 group-hover:opacity-90" />
+          <h3 class="mt-4 text-lg font-bold">Earthen Bottle</h3>
+          <p>Modern way of prettiness</p>
+          <p class="mt-1 text-lg font-medium text-gray-900 mb-2">$100</p>
+          <button
+            class="add-cart-btn  px-6 py-2 flex justify-center items-center gap-2 rounded bg-yellow-500 hover:bg-yellow-600 cursor-pointer text-white font-bold transition group-hover:-translate-y-2 transition-transform">
+            <img src="images/icon-cart.svg" alt="">Add cart
+          </button>
+        </a>
+
+
+        <a href="#"
+          class="group bg-white rounded-xl p-4 shadow hover:shadow-lg transition text-left product-card Sunglasses">
+          <img src="images/sg-3.jpg" alt="" class="rounded-lg object-cover w-full h-56 group-hover:opacity-90" />
+          <h3 class="mt-4 text-lg font-bold">Earthen Bottle</h3>
+          <p>Modern way of prettiness</p>
+          <p class="mt-1 text-lg font-medium text-gray-900 mb-2">$140</p>
+          <button
+            class="add-cart-btn  px-6 py-2 flex justify-center items-center gap-2 rounded bg-yellow-500 hover:bg-yellow-600 cursor-pointer text-white font-bold transition group-hover:-translate-y-2 transition-transform">
+            <img src="images/icon-cart.svg" alt="">Add cart
+          </button>
+        </a>
+
+        <a href="#"
+          class="group bg-white rounded-xl p-4 shadow hover:shadow-lg transition text-left product-card Sunglasses">
+          <img src="images/sg-4.jpg" alt="" class="rounded-lg object-cover w-full h-56 group-hover:opacity-90" />
+          <h3 class="mt-4 text-lg font-bold">Earthen Bottle</h3>
+          <p>Modern way of prettiness</p>
+          <p class="mt-1 text-lg font-medium text-gray-900 mb-2">$12.5</p>
+          <button
+            class=" add-cart-btn px-6 py-2 flex justify-center items-center gap-2 rounded bg-yellow-500 hover:bg-yellow-600 cursor-pointer  text-white font-bold transition group-hover:-translate-y-2 transition-transform">
+            <img src="images/icon-cart.svg" alt="">Add cart
+          </button>
+        </a>
+
+        <a href="#"
+          class="group bg-white rounded-xl p-4 shadow hover:shadow-lg transition text-left product-card Trousers ">
+          <img src="images/trousers-1.jpg" alt="" class="rounded-lg object-cover w-full h-56 group-hover:opacity-90" />
+          <h3 class="mt-4 text-lg font-bold">Earthen Bottle</h3>
+          <p>Modern way of prettiness</p>
+          <p class="mt-1 text-lg font-medium text-gray-900 mb-2">$1900</p>
+          <button
+            class="add-cart-btn px-6 py-2 flex justify-center items-center gap-2 rounded bg-yellow-500 hover:bg-yellow-600 cursor-pointer text-white font-bold transition group-hover:-translate-y-2 transition-transform">
+            <img src="images/icon-cart.svg" alt="">Add cart
+          </button>
+        </a>
+
+
+        <a href="#"
+          class="group bg-white rounded-xl p-4 shadow hover:shadow-lg transition text-left product-card Trousers ">
+          <img src="images/trousers-2.jpg" alt="" class="rounded-lg object-cover w-full h-56 group-hover:opacity-90" />
+          <h3 class="mt-4 text-lg font-bold">Earthen Bottle</h3>
+          <p>Modern way of prettiness</p>
+          <p class="mt-1 text-lg font-medium text-gray-900 mb-2">$800</p>
+          <button
+            class="add-cart-btn px-6 py-2 flex justify-center items-center gap-2 rounded bg-yellow-500 hover:bg-yellow-600 cursor-pointer text-white font-bold transition group-hover:-translate-y-2 transition-transform">
+            <img src="images/icon-cart.svg" alt="">Add cart
+          </button>
+        </a>
+
+
+        <a href="#"
+          class="group bg-white rounded-xl p-4 shadow hover:shadow-lg transition text-left product-card Trousers ">
+          <img src="images/trousers-3.jpg" alt="" class="rounded-lg object-cover w-full h-56 group-hover:opacity-90" />
+          <h3 class="mt-4 text-lg font-bold">Earthen Bottle</h3>
+          <p>Modern way of prettiness</p>
+          <p class="mt-1 text-lg font-medium text-gray-900 mb-2">$75</p>
+          <button
+            class="add-cart-btn px-6 py-2 flex justify-center items-center gap-2 rounded bg-yellow-500 hover:bg-yellow-600 cursor-pointer text-white font-bold transition group-hover:-translate-y-2 transition-transform">
+            <img src="images/icon-cart.svg" alt="">Add cart
+          </button>
+        </a>
+
+
+        <a href="#"
+          class="group bg-white rounded-xl p-4 shadow hover:shadow-lg transition text-left product-card Trousers ">
+          <img src="images/trousers-4.jpg" alt="" class="rounded-lg object-cover w-full h-56 group-hover:opacity-90" />
+          <h3 class="mt-4 text-lg font-bold">Earthen Bottle</h3>
+          <p>Modern way of prettiness</p>
+          <p class="mt-1 text-lg font-medium text-gray-900 mb-2">$36</p>
+          <button
+            class="add-cart-btn px-6 py-2 flex justify-center items-center gap-2 rounded bg-yellow-500 hover:bg-yellow-600 cursor-pointer text-white font-bold transition group-hover:-translate-y-2 transition-transform">
+            <img src="images/icon-cart.svg" alt="">Add cart
+          </button>
+        </a>
+      </div>
+    </section>
+
+
+
+
+
+
+
+
+    <section>
+      <div class="text-center relative scroll-element">
+        <h2 id="FAQ" class=" font-bold text-3xl mb-30 ">FAQ's</h2>
+        <div class="w-40 h-1 bg-yellow-500 absolute left-1/2 -translate-x-1/2 top-[100%]"></div>
+      </div>
+
+
+      <div class="faq-container ">
+
+        <div class="flex justify-between border-yellow-300 border border-solid mb-5 faq-item">
+          <div class="p-3 ">
+            <h2 class="font-bold text-1xl mb-3  border-b-blue-900-500">How much money should I pay for delivery?</h2>
+
+            <div class="faq-answer max-h-0 overflow-hidden opacity-0 transition-all duration-500 ease-in-out">
+              <div class="w-full bg-gray-500 h-0.5 mt-3 mb-3"></div>
+              <p class="text-amber-950 font-bold d-none">You don't have to pay for delivery. It's totally free!</p>
+            </div>
+          </div>
+
+          <div class="row-faq   mt-10 me-4 transform -translate-y-1/2 cursor-pointer  ">
+            <img class="" src="images/icon-next.svg" alt="">
+          </div>
+        </div>
+
+        <div class="flex justify-between border-yellow-300 border border-solid mb-5 faq-item">
+          <div class="p-3 ">
+            <h2 class="font-bold text-1xl mb-3  border-b-blue-900-500">How much money should I pay for delivery?</h2>
+
+            <div class="faq-answer max-h-0 overflow-hidden opacity-0 transition-all duration-500 ease-in-out">
+              <div class="w-full bg-gray-500 h-0.5 mt-3 mb-3"></div>
+              <p class="text-amber-950 font-bold d-none">You don't have to pay for delivery. It's totally free!</p>
+            </div>
+          </div>
+
+          <div class=" row-faq  mt-10 me-4 transform -translate-y-1/2 cursor-pointer ">
+            <img class="mt-3" src="images/icon-next.svg" alt="">
+          </div>
+        </div>
+        <div class="flex justify-between border-yellow-300 border border-solid mb-5 faq-item">
+          <div class="p-3 ">
+            <h2 class="font-bold text-1xl mb-3  border-b-blue-900-500">How much money should I pay for delivery?</h2>
+
+            <div class="faq-answer max-h-0 overflow-hidden opacity-0 transition-all duration-500 ease-in-out">
+              <div class="w-full bg-gray-500 h-0.5 mt-3 mb-3"></div>
+              <p class="text-amber-950 font-bold d-none">You don't have to pay for delivery. It's totally free!</p>
+            </div>
+          </div>
+
+          <div class=" row-faq  mt-10 me-4 transform -translate-y-1/2 cursor-pointer ">
+            <img class="mt-3" src="images/icon-next.svg" alt="">
+          </div>
+        </div>
+
+
+
+
+        <section
+          class="bg-gradient-to-r from-gray-400 to-yellow-100 backdrop-blur-md  transition-all rounded-2xl p-10 max-w-6xl mt-[15%] mb-5 pb-2 mx-auto scroll-element">
+
+          <!-- نخليهم جنب بعض -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-5">
+
+            <!-- Left side: Form -->
+            <div>
+              <h2 id="Contacts" class="text-4xl font-extrabold mb-5">
+                <span class="text-blue-400">Contacts</span>
+              </h2>
+
+              <form class="space-y-6">
+                <div class="grid grid-cols-2 gap-4">
+                  <div>
+                    <label class="block text-sm font-semibold mb-1">First name</label>
+                    <input type="text"
+                      class="cursor-pointer w-full bg-[#ecf3ff] rounded-md p-2.5 focus:outline-none focus:ring-2 focus:ring-yellow-500">
+                  </div>
+                  <div>
+                    <label class="block text-sm font-semibold mb-1">Last name</label>
+                    <input type="text"
+                      class="cursor-pointer w-full bg-[#ecf3ff] rounded-md p-2.5 focus:outline-none focus:ring-2 focus:ring-yellow-500">
+                  </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4">
+                  <div>
+                    <label class="block text-sm font-semibold mb-1">Phone</label>
+                    <input type="text"
+                      class="cursor-pointer w-full bg-[#ecf3ff] rounded-md p-2.5 focus:outline-none focus:ring-2 focus:ring-yellow-500">
+                  </div>
+                  <div>
+                    <label class="block text-sm font-semibold mb-1">Website</label>
+                    <input type="text"
+                      class="cursor-pointer w-full bg-[#ecf3ff] rounded-md p-2.5 focus:outline-none focus:ring-2 focus:ring-yellow-500">
+                  </div>
+                </div>
+
+                <div>
+                  <label class="block text-sm font-semibold mb-1">Message</label>
+                  <textarea rows="4"
+                    class="cursor-pointer w-full bg-[#ecf3ff] rounded-md p-2.5 focus:outline-none focus:ring-2 focus:ring-yellow-500"></textarea>
+                </div>
+
+                <button type="submit"
+                  class="cursor-pointer w-full bg-gradient-to-r from-gray-400 to-yellow-200 text-white font-semibold py-2.5 rounded-md transition  shadow hover:shadow-lg">
+                  Let's talk
+                </button>
+
+                <p class="text-gray-700 text-sm text-center">
+                  By submitting this form, I agree to the
+                  <a href="#" class="text-indigo-600 hover:underline">privacy policy</a>.
+                </p>
+              </form>
+            </div>
+
+            <!-- Right side: Image -->
+            <div class="flex justify-center items-center">
+              <img src="images/necklace-cover.jpg" alt="Contact" class="rounded-2xl shadow-lg   object-cover">
+            </div>
+
+          </div>
+        </section>
+
+
+
+<!-- Cart Section -->
+
+  <div id="cart"
+       class="fixed top-0 right-0 h-full w-[90%] max-w-sm md:w-[30%] mt-24 bg-gradient-to-r from-blue-200 to-purple-200 rounded-l-2xl shadow-lg transform translate-x-full transition-transform duration-500 ease-in-out z-50 overflow-y-auto">
+
+    
+    <div class="flex justify-between items-center p-4">
+      <h2 class="text-center text-2xl font-semibold font-serif">My Cart</h2>
+      <div id="close" class="cursor-pointer hover:scale-110 transition-transform">
+        <img src="images/icon-close.svg" alt="Close" class="w-6 h-6">
+      </div>
+    </div>
+
+   <!-- Cart Items -->
+<div class="flex flex-col gap-4 p-3 cart-items">
+  
+</div>
+
+<div class="w-full bg-yellow-500 h-0.5 mt-3 mb-3 shadow-lg"></div>
+
+<!-- Total Section -->
+<div class="p-4 m-3 bg-white rounded-lg shadow-lg flex justify-between items-center">
+  <span class="font-serif font-semibold text-lg">Total:</span>
+  <span id="total" class="font-serif font-bold text-xl text-gray-900">$0</span>
+</div>
+  </div>
+
+
+
+  <div id="cart-toast" class="hidden fixed top-5 right-5 bg-green-500 text-white font-semibold px-6 py-3 rounded-lg shadow-lg transition-opacity duration-500">
+  Added to cart successfully!
+</div>
+
+
+
+ 
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>
