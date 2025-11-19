@@ -98,7 +98,6 @@ filterItems.forEach(btn => {
       }
     });
 
-    // تفعيل الزر المختار
     filterItems.forEach(b => b.classList.remove("text-purple-600"));
     btn.classList.add("text-purple-600");
   });
@@ -120,18 +119,15 @@ addCartButtons.forEach(btn => {
   btn.addEventListener('click', (e) => {
     e.preventDefault();
 
-    // الحصول على بيانات المنتج
     const card = btn.closest('.product-card');
     const name = card.querySelector('h3').textContent;
     const price = card.querySelector('p:nth-of-type(2)').textContent;
     const imgSrc = card.querySelector('img').src;
 
-    // تخزين المنتج
     cart.push({ name, price, imgSrc });
     count++;
     cartCount.textContent = count;
 
-    // عرض رسالة النجاح
     cartToast.classList.remove('hidden');
     cartToast.style.opacity = 1;
 
@@ -166,7 +162,7 @@ closeBtn.addEventListener('click', () => {
 
 // cart  
 
-const cartContainer = document.querySelector('#cart .cart-items'); // مكان إضافة العناصر
+const cartContainer = document.querySelector('#cart .cart-items'); 
 const totalEl = document.getElementById('total');
 
 function updateTotal() {
@@ -188,7 +184,6 @@ addCartButtons.forEach(btn => {
     const price = card.querySelector('p:nth-of-type(2)').textContent.replace('$$','$');
     const imgSrc = card.querySelector('img').src;
 
-    // إنشاء العنصر
     const item = document.createElement('div');
     item.className = 'cart-item flex gap-3 p-3 bg-white rounded-lg shadow items-center';
     item.innerHTML = `
